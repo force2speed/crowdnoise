@@ -14,7 +14,7 @@ function App() {
     <Navbar/>
      <Recorder onSoundClassified={handleNewSound} />
 
-      <MapContainer center={[28.61, 77.21]} zoom={13} style={{ height: '60vh', width: '100%' }}>
+      <MapContainer center={[28.61, 77.21]} zoom={13} style={{ height: '90vh', width: '100%' }}>
         <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
 
         {soundMarkers.map((marker, index) => (

@@ -69,28 +69,39 @@ const Recorder = ({ onSoundClassified }) => {
   }
 
   return (
-    <div className="p-4 space-y-4">
+    <>
+    <div className="p-4 space-y-4 flex w-full justify-center">
       <button
         onClick={startRecording}
-        className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+        className="bg-[#34D399] text-white px-4 py-2 rounded hover:bg-[#10B981] "
         disabled={isRecording}
       >
         {isRecording ? 'Recording...' : 'Start Recording'}
       </button>
-
-      {audioURL && (
-        <div>
-          <p className="text-green-600">Recording Complete:</p>
-          <audio controls src={audioURL}></audio>
-        </div>
-      )}
-
-      {location && (
-        <p className="text-sm text-gray-600">
-          Location: Lat {location.lat.toFixed(4)}, Lng {location.lng.toFixed(4)}
-        </p>
-      )}
+      
     </div>
+<div>
+        {audioURL && (
+          <>
+          <div className='flex justify-center pt-4'>
+            <p className=" text-[#A7F3D0]">Recording Complete:</p>
+
+          </div>
+            <div className='flex justify-center'>
+          
+            <audio controls src={audioURL}></audio>
+          </div>
+          </>
+        )}
+  
+        {location && (
+          <p className="text-sm text-gray-600">
+            Location: Lat {location.lat.toFixed(4)}, Lng {location.lng.toFixed(4)}
+          </p>
+        )}
+      </div>    
+    </>
+
   )
 }
 

@@ -63,8 +63,14 @@ const Navbar = () => {
         </svg>
     </button>
     <div className='flex items-'>
-
-    <div id="mobileMenu" className={`absolute ${cond?'flex':'hidden'}  text-base left-0 bg-black  h-full flex-col items-start gap-4`}>
+    
+    <div id="mobileMenu" className={`fixed ${cond ? 'flex' : 'hidden'} top-0 left-0 w-full h-screen bg-black flex-col items-start gap-6 px-6 py-8 z-[9999]  text-white `}>
+        <button id="menuToggle" className=" fixed top-0 right-0 md:hidden text-gray-600 cursor-pointer m-2 p-2 " onClick={toggle}>
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"
+            strokeLinecap="round" strokeLinejoin="round">
+            <path d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+    </button>
         <a className="hover:text-indigo-600" href="#">
             Products
         </a>
